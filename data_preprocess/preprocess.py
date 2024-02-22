@@ -15,7 +15,7 @@ class PreProcessLOBData:
         for entry in self.lob_data:
             bids = entry[2][0][1]
             asks = entry[2][1][1]
-            if bids and asks:  # Check if either bids or asks are not empty
+            if bids and asks:
                 bids_dict = [{'price': bid[0], 'quantity': bid[1]} for bid in bids]
                 asks_dict = [{'price': ask[0], 'quantity': ask[1]} for ask in asks]
                 entry_without_exchange = {'timestamp': entry[0], 'bids': bids_dict, 'asks': asks_dict}
