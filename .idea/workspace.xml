@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1444dd78-9756-4a48-9ab0-0ba90c4df2e9" name="Changes" comment="ARIMA-OHLC">
-      <change afterPath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC.py" beforeDir="false" />
-    </list>
+    <list default="true" id="1444dd78-9756-4a48-9ab0-0ba90c4df2e9" name="Changes" comment="ARIMA-OHLC" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +95,7 @@
       <updated>1709066469339</updated>
       <workItem from="1709066473060" duration="18000" />
       <workItem from="1709066526272" duration="1330000" />
-      <workItem from="1709484756807" duration="1901000" />
+      <workItem from="1709484756807" duration="2093000" />
     </task>
     <task id="LOCAL-00001" summary="ARIMA-OHLC">
       <option name="closed" value="true" />
@@ -125,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709067851589</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ARIMA-OHLC">
+      <option name="closed" value="true" />
+      <created>1709486832165</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709486832165</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
