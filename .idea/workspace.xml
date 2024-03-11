@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1444dd78-9756-4a48-9ab0-0ba90c4df2e9" name="Changes" comment="ARIMA-OHLC" />
+    <list default="true" id="1444dd78-9756-4a48-9ab0-0ba90c4df2e9" name="Changes" comment="ARIMA-OHLC">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,6 +100,8 @@
       <workItem from="1709484756807" duration="2093000" />
       <workItem from="1709486909352" duration="122000" />
       <workItem from="1709487060399" duration="379000" />
+      <workItem from="1709806050942" duration="1439000" />
+      <workItem from="1709808845932" duration="189000" />
     </task>
     <task id="LOCAL-00001" summary="ARIMA-OHLC">
       <option name="closed" value="true" />
