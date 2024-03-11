@@ -1,86 +1,122 @@
 import numpy as np
-import random
-from collections import deque
+import pandas as pd
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.losses import Huber
+from tensorflow.keras.layers import Dense, Flatten, LSTM, Dropout
+from sklearn.preprocessing import MinMaxScaler
+import matplotlib.pyplot as plt
 
-class DQN:
-    def __init__(self, state_size, action_size):
-        self.state_size = state_size
-        self.action_size = action_size
-        self.memory = deque(maxlen=2000)  # Replay memory
-        self.gamma = 0.95  # Discount factor
-        self.epsilon = 1.0  # Exploration rate
-        self.epsilon_decay = 0.995
-        self.epsilon_min = 0.01
-        self.learning_rate = 0.001
-        self.model = self._build_model()
-        self.target_model = self._build_model()
-        self.update_target_model()
+from data_preprocess.preprocess import PreProcessLOBData
 
-    def _build_model(self):
-        model = Sequential()
-        model.add(Dense(24, input_dim=self.state_size, activation='relu'))
-        model.add(Dense(24, activation='relu'))
-        model.add(Dense(self.action_size, activation='linear'))
-        model.compile(loss=Huber(), optimizer=Adam(lr=self.learning_rate))
-        return model
 
-    def remember(self, state, action, reward, next_state, done):
-        self.memory.append((state, action, reward, next_state, done))
+def retrieve_preprocessed_data(file_path):
+    # Create an instance of PreProcessLOBData
+    lob_data_processor = PreProcessLOBData(file_path)
 
-    def act(self, state):
-        if np.random.rand() <= self.epsilon:
-            return random.randrange(self.action_size)
-        else:
-            return np.argmax(self.model.predict(state)[0])
+    # Process the file to extract and preprocess the data
+    lob_data_processor.process_file()
 
-    def replay(self, batch_size):
-        minibatch = random.sample(self.memory, batch_size)
-        for state, action, reward, next_state, done in minibatch:
-            target = self.target_model.predict(state)
-            if done:
-                target[0][action] = reward
-            else:
-                t = self.target_model.predict(next_state)[0]
-                target[0][action] = reward + self.gamma * np.amax(t)
-            self.model.fit(state, target, epochs=1, verbose=0)
-        if self.epsilon > self.epsilon_min:
-            self.epsilon *= self.epsilon_decay
+    # Get the preprocessed data
+    preprocessed_data = lob_data_processor.preprocess_data()
 
-    def update_target_model(self):
-        self.target_model.set_weights(self.model.get_weights())
+    return preprocessed_data
 
-# Example usage
-# Define environment parameters
-state_size = env.observation_space.shape[0]
-action_size = env.action_space.n
 
-# Initialize DQN agent
-agent = DQN(state_size, action_size)
+def create_time_series(preprocessed_data):
+    try:
+        # Create DataFrame from preprocessed data
+        df = pd.DataFrame(preprocessed_data)
 
-# Training loop
-EPISODES = 1000
-batch_size = 32
+        # Set timestamp as index
+        df['timestamp'] = pd.to_datetime(df['timestamp'], unit='s')
+        df.set_index('timestamp', inplace=True)
 
-for e in range(EPISODES):
-    state = env.reset()
-    state = np.reshape(state, [1, state_size])
-    for time in range(500):
-        action = agent.act(state)
-        next_state, reward, done, _ = env.step(action)
-        reward = reward if not done else -10
-        next_state = np.reshape(next_state, [1, state_size])
-        agent.remember(state, action, reward, next_state, done)
-        state = next_state
-        if done:
-            print("episode: {}/{}, score: {}, e: {:.2}"
-                  .format(e, EPISODES, time, agent.epsilon))
+        # Ensure bid and ask prices are numeric
+        df['bids'] = df['bids'].apply(lambda x: [float(bid['price']) for bid in x])
+        df['asks'] = df['asks'].apply(lambda x: [float(ask['price']) for ask in x])
+
+        df['bid_mean'] = df['bids'].apply(lambda x: sum(x) / len(x))
+        df['ask_mean'] = df['asks'].apply(lambda x: sum(x) / len(x))
+
+        # Combine bid and ask means
+        time_series = df[['bid_mean', 'ask_mean']].mean(axis=1)
+
+        return time_series
+
+    except Exception as e:
+        print("Error:", e)
+        return None
+
+
+def split_sequence(sequence, n_steps):
+    X, y = [], []
+    for i in range(len(sequence)):
+        end_ix = i + n_steps
+        if end_ix > len(sequence) - 1:
             break
-        if len(agent.memory) > batch_size:
-            agent.replay(batch_size)
-    if e % 10 == 0:  # Update target network every 10 episodes
-        agent.update_target_model()
+        seq_x, seq_y = sequence[i:end_ix], sequence[end_ix]
+        X.append(seq_x)
+        y.append(seq_y)
+    return np.array(X), np.array(y)
+
+
+def create_model(n_steps, n_features):
+    model = Sequential([
+        LSTM(50, activation='relu', input_shape=(n_steps, n_features)),
+        Dense(1)
+    ])
+    model.compile(optimizer='adam', loss='mse')
+    return model
+
+
+def train_model(model, X_train, y_train, epochs=50, batch_size=128):
+    model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=1)
+    return model
+
+
+def evaluate_model(model, X_test, y_test):
+    y_pred = model.predict(X_test)
+    mse = np.mean((y_pred - y_test) ** 2)
+    return mse, y_pred
+
+
+if __name__ == "__main__":
+    # Provide the file path
+    file_path = "C:\\Users\\ramkh\\Documents\\Final Year Project\\dsmp-2024-group22\\data_preprocess\\UoB_Set01_2025-01-02LOBs.txt"
+
+    # Retrieve the preprocessed data
+    preprocessed_data = retrieve_preprocessed_data(file_path)
+
+    # Create time series from preprocessed data
+    time_series = create_time_series(preprocessed_data)
+
+    # Define number of time steps
+    n_steps = 10
+
+    # Split the data into input (X) and output (y) sequences
+    X, y = split_sequence(time_series.values, n_steps)
+
+    # Reshape from [samples, timesteps] into [samples, timesteps, features]
+    n_features = 1
+    X = X.reshape((X.shape[0], X.shape[1], n_features))
+
+    # Define train-test split
+    train_size = int(len(X) * 0.8)
+    X_train, X_test, y_train, y_test = X[:train_size], X[train_size:], y[:train_size], y[train_size:]
+
+    # Create and train the model
+    model = create_model(n_steps, n_features)
+    model = train_model(model, X_train, y_train)
+
+    # Evaluate the model
+    mse, y_pred = evaluate_model(model, X_test, y_test)
+    print("Mean Squared Error:", mse)
+
+    # Plot actual vs. predicted values
+    plt.plot(y_test, label='Actual')
+    plt.plot(y_pred, label='Predicted')
+    plt.xlabel('Time')
+    plt.ylabel('Value')
+    plt.title('DQN Forecasting')
+    plt.legend()
+    plt.show()
