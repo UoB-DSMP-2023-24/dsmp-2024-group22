@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1444dd78-9756-4a48-9ab0-0ba90c4df2e9" name="Changes" comment="ARIMA-OHLC" />
+    <list default="true" id="1444dd78-9756-4a48-9ab0-0ba90c4df2e9" name="Changes" comment="ARIMA-OHLC">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC-median.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC-median.ipynb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,6 +111,8 @@
       <workItem from="1709808845932" duration="189000" />
       <workItem from="1710175514475" duration="8788000" />
       <workItem from="1710207311021" duration="3266000" />
+      <workItem from="1710255444879" duration="424000" />
+      <workItem from="1710255956998" duration="50000" />
     </task>
     <task id="LOCAL-00001" summary="ARIMA-OHLC">
       <option name="closed" value="true" />
