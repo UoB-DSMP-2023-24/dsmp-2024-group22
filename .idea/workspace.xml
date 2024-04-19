@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1444dd78-9756-4a48-9ab0-0ba90c4df2e9" name="Changes" comment="ARIMA-OHLC">
+      <change afterPath="$PROJECT_DIR$/K-line chart/test_data_predictions.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K-line chart/train_data_predictions.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC-median.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC-median.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC.ipynb" afterDir="false" />
@@ -119,6 +121,8 @@
       <workItem from="1710324412181" duration="59000" />
       <workItem from="1710324491727" duration="418000" />
       <workItem from="1710326390699" duration="2272000" />
+      <workItem from="1713431251476" duration="1440000" />
+      <workItem from="1713556040168" duration="4167000" />
     </task>
     <task id="LOCAL-00001" summary="ARIMA-OHLC">
       <option name="closed" value="true" />
