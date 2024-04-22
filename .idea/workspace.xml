@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1444dd78-9756-4a48-9ab0-0ba90c4df2e9" name="Changes" comment="ARIMA-OHLC">
-      <change afterPath="$PROJECT_DIR$/K-line chart/test_data_predictions.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K-line chart/train_data_predictions.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K-line chart/filetrans.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC-median.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC-median.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +120,8 @@
       <workItem from="1710324491727" duration="418000" />
       <workItem from="1710326390699" duration="2272000" />
       <workItem from="1713431251476" duration="1440000" />
-      <workItem from="1713556040168" duration="4167000" />
+      <workItem from="1713556040168" duration="6167000" />
+      <workItem from="1713641851229" duration="907000" />
     </task>
     <task id="LOCAL-00001" summary="ARIMA-OHLC">
       <option name="closed" value="true" />
@@ -204,7 +203,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710210225129</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ARIMA-OHLC">
+      <option name="closed" value="true" />
+      <created>1713560239709</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1713560239709</updated>
+    </task>
+    <task id="LOCAL-00012" summary="ARIMA-OHLC">
+      <option name="closed" value="true" />
+      <created>1713560356841</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1713560356841</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
