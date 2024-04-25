@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1444dd78-9756-4a48-9ab0-0ba90c4df2e9" name="Changes" comment="ARIMA-OHLC">
-      <change afterPath="$PROJECT_DIR$/K-line chart/filetrans.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K-line chart/LSTM trading test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/K-line chart/LSTM trading test.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +122,9 @@
       <workItem from="1713431251476" duration="1440000" />
       <workItem from="1713556040168" duration="6167000" />
       <workItem from="1713641851229" duration="907000" />
+      <workItem from="1713826208746" duration="797000" />
+      <workItem from="1713976818770" duration="7219000" />
+      <workItem from="1714035000384" duration="1022000" />
     </task>
     <task id="LOCAL-00001" summary="ARIMA-OHLC">
       <option name="closed" value="true" />
