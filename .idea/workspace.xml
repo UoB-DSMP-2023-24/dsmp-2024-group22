@@ -124,7 +124,9 @@
       <workItem from="1713641851229" duration="907000" />
       <workItem from="1713826208746" duration="797000" />
       <workItem from="1713976818770" duration="7219000" />
-      <workItem from="1714035000384" duration="1022000" />
+      <workItem from="1714035000384" duration="1674000" />
+      <workItem from="1714059108840" duration="7411000" />
+      <workItem from="1714173160467" duration="406000" />
     </task>
     <task id="LOCAL-00001" summary="ARIMA-OHLC">
       <option name="closed" value="true" />
@@ -227,6 +229,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ARIMA-OHLC" />
