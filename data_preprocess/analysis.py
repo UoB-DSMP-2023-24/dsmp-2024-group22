@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import mplfinance as mpf
-from preprocess import PreProcessLOBData
+from data_preprocess import PreProcessLOBData
 
 
 def retrieve_preprocessed_data(file_path):
