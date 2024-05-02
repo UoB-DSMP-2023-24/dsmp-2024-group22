@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1444dd78-9756-4a48-9ab0-0ba90c4df2e9" name="Changes" comment="ARIMA-OHLC">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/K-line chart/ARIMA-OHLC.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/K-line chart/LSTM trading test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/K-line chart/LSTM trading test.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +125,8 @@
       <workItem from="1714035000384" duration="1674000" />
       <workItem from="1714059108840" duration="7411000" />
       <workItem from="1714173160467" duration="406000" />
+      <workItem from="1714493679637" duration="138000" />
+      <workItem from="1714493830958" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="ARIMA-OHLC">
       <option name="closed" value="true" />
@@ -224,7 +224,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713560356841</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ARIMA-OHLC">
+      <option name="closed" value="true" />
+      <created>1714493746013</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714493746013</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ARIMA-OHLC">
+      <option name="closed" value="true" />
+      <created>1714493752923</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714493752923</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
